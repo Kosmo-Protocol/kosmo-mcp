@@ -1,0 +1,34 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
+  "name": "io.github.Kosmo-Protocol/kosmo-mcp",
+  "description": "Prepare unsigned token launches on Kosmo Protocol (5 chains), metadata and Agent badge. No keys.",
+  "repository": {
+    "url": "https://github.com/Kosmo-Protocol/kosmo-mcp",
+    "source": "github"
+  },
+  "version": "0.1.1",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@kosmo-protocol/mcp",
+      "version": "0.1.1",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "KOSMO_RPC_4663",
+          "description": "RPC URL for Robinhood Chain (required to launch there).",
+          "isRequired": false,
+          "isSecret": false
+        },
+        {
+          "name": "KOSMO_RPC_8453",
+          "description": "Optional RPC URL for Base. Other chains: KOSMO_RPC_<chainId>.",
+          "isRequired": false,
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}

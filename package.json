@@ -1,6 +1,6 @@
 {
   "name": "@kosmo-protocol/mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP server for Kosmo Protocol: prepare token launches (unsigned), manage metadata, and the Agent badge. Never holds keys.",
   "main": "dist/index.js",
   "scripts": {
@@ -41,5 +41,6 @@
   "homepage": "https://kosmoprotocol.com",
   "engines": {
     "node": ">=20"
-  }
+  },
+  "mcpName": "io.github.Kosmo-Protocol/kosmo-mcp"
 }
