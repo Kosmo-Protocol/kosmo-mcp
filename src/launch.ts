@@ -21,7 +21,7 @@ export interface LaunchInput {
   creatorSellFeeBps: number;
   quoteAsset?: string;
   firstBuy?: string; // decimal amount of the native coin, e.g. "0.05"
-  suffix?: string;
+  suffix: string;
 }
 
 export async function prepareLaunch(i: LaunchInput) {
@@ -40,7 +40,7 @@ export async function prepareLaunch(i: LaunchInput) {
   ] as const) {
     if (!Number.isInteger(v) || v < 0 || v > max) throw new Error(`${k} must be an integer from 0 to ${max}.`);
   }
-  const suffix = (i.suffix ?? "c0de").toLowerCase();
+  const suffix = (i.suffix ?? "").toLowerCase();
   if (!/^[0-9a-f]{3,5}$/.test(suffix)) throw new Error("suffix must be 3 to 5 hex characters.");
 
   const value = i.firstBuy ? parseUnits(i.firstBuy, 18) : 0n;

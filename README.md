@@ -41,7 +41,7 @@ Optional environment variables:
 
 ## Launch flow
 
-1. `prepare_launch` with the owner's chosen settings. There are no defaults for holder share, burn share or creator fees, and creator fees are permanent, so the owner must choose them.
+1. `prepare_launch` with the owner's chosen settings. There are no defaults for the address suffix, holder share, burn share or creator fees, and creator fees are permanent, so the owner must choose them.
 2. Sign and send the returned `transaction` from the creator wallet.
 3. `prepare_metadata_message`, sign it, then `upload_logo` and `save_metadata`.
 4. Optionally `prepare_metadata_message` again with a fresh signature, then `lock_metadata`.

@@ -40,7 +40,7 @@ server.registerTool("prepare_launch", {
   description:
     "Mines the vanity salt, computes the start tick, simulates, and returns an UNSIGNED factory transaction plus the predicted token address. " +
     "This server never signs or sends anything: the wallet owner signs and sends the returned transaction. " +
-    "There are no defaults for the fee or share settings: ask the owner for holderShareBps, burnShareBps, creatorBuyFeeBps and creatorSellFeeBps and show them the summary before signing. Creator fees are permanent.",
+    "There are no defaults for the fee or share settings: ask the owner for suffix, holderShareBps, burnShareBps, creatorBuyFeeBps and creatorSellFeeBps and show them the summary before signing. Creator fees are permanent.",
   inputSchema: {
     chainId,
     creator: address.describe("The wallet that will send the transaction. It becomes the creator."),
@@ -53,7 +53,7 @@ server.registerTool("prepare_launch", {
     creatorSellFeeBps: z.number().int().min(0).max(1000).describe("Creator fee on sells, 0 to 1000 (10%). Permanent."),
     quoteAsset: address.optional().describe("Approved quote asset address. Omit for the chain's native coin."),
     firstBuy: z.string().regex(/^\d+(\.\d+)?$/).optional().describe("Creator's own first buy in the native coin, e.g. 0.05. Omit for none."),
-    suffix: z.string().regex(/^[0-9a-fA-F]{3,5}$/).optional().describe("3 to 5 hex characters the token address should end with. Default c0de."),
+    suffix: z.string().regex(/^[0-9a-fA-F]{3,5}$/).describe("3 to 5 hex characters the token address will end with. No default: ask the owner."),
   },
 }, wrap(prepareLaunch));
 
