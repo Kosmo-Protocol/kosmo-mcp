@@ -1,0 +1,45 @@
+{
+  "name": "@kosmo-protocol/mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Kosmo Protocol: prepare token launches (unsigned), manage metadata, and the Agent badge. Never holds keys.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "uniswap-v4",
+    "token-launch",
+    "kosmo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "viem": "^2.57.14",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  },
+  "type": "module",
+  "bin": {
+    "kosmo-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kosmo-Protocol/kosmo-mcp.git"
+  },
+  "homepage": "https://kosmoprotocol.com",
+  "engines": {
+    "node": ">=20"
+  }
+}
